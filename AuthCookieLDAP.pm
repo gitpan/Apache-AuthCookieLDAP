@@ -30,7 +30,7 @@ package Apache::AuthCookieLDAP;
 use strict;
 use 5.004;
 use vars qw( $VERSION );
-( $VERSION ) = '$Revision: 0.02 $' =~ /([\d.]+)/;
+( $VERSION ) = '$Revision: 0.03 $' =~ /([\d.]+)/;
 
 use Apache::AuthCookie;
 use vars qw( @ISA );
