@@ -30,7 +30,7 @@ package Apache::AuthCookieLDAP;
 use strict;
 use 5.004;
 use vars qw( $VERSION );
-( $VERSION ) = '$Revision: 0.01 $' =~ /([\d.]+)/;
+( $VERSION ) = '$Revision: 0.02 $' =~ /([\d.]+)/;
 
 use Apache::AuthCookie;
 use vars qw( @ISA );
@@ -102,7 +102,7 @@ Apache::AuthCookieLDAP - An AuthCookie module backed by a LDAP database.
 
 =head1 VERSION
 
-	$Revision: 0.01 $
+	$Revision: 0.02 $
 
 =head1 SYNOPSIS
 
@@ -506,8 +506,8 @@ sub authen_cred($$\@)
 		
 	# Bind annonymously
 
-	my $mess = $con->bind(dn => "uid=alumni,ou=search,o=student.lu.se,o=lu.se", password =>'al2945umni');
-#	my $mess = $con->bind();
+
+	my $mess = $con->bind();
 	unless ($mess->code == LDAP_SUCCESS) {
 	    $r->log_reason("LDAP Bind Failed", $r->uri);
 	    return 'bad';
